@@ -1,13 +1,13 @@
 import React from "react";
 import "./gameCardStyle.css";
 
+
+
 function GameCard(props) {
   return (
-    <div class="card-container col-md-12">
-      <div className="card">
-        <div className="img-container">
-          <img alt={props.name} src={props.image} />
-        </div>
+    <div className="container">
+      <div className="card-container col-md-12">
+        <img onClick={() => props.handleClick()} className="card-image" alt={props.name} src={props.image} />
       </div>
     </div>
   );
