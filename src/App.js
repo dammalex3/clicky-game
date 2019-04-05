@@ -64,14 +64,17 @@ class App extends Component {
   }
 
   handleClick = () => {
-    alert("you clicked");
+    
+    const cards = this.shuffle(this.state.cards);
+    // Set this.state.friends equal to the new friends array
+    this.setState({ cards });
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        {this.shuffle(this.state.cards).map(card => (
+        {this.state.cards.map(card => (
           <GameCard
             id={card.id}
             image={card.image}
