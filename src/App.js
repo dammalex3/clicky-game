@@ -64,7 +64,6 @@ class App extends Component {
   }
 
   handleClick = () => {
-    
     const cards = this.shuffle(this.state.cards);
     // Set this.state.friends equal to the new friends array
     this.setState({ cards });
