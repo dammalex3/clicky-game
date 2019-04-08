@@ -6,6 +6,8 @@ import './App.css';
 class App extends Component {
 
   state = {
+    score: 0,
+    clickedCards: [],
     cards: [
       {
         "id": 1,
@@ -64,6 +66,7 @@ class App extends Component {
   }
 
   handleClick = () => {
+    this.setState({ score: this.state.score + 1 });
     const cards = this.shuffle(this.state.cards);
     // Set this.state.friends equal to the new friends array
     this.setState({ cards });
@@ -72,7 +75,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header 
+          score={this.state.score}
+        />
         {this.state.cards.map(card => (
           <GameCard
             id={card.id}
